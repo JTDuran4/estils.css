@@ -1,0 +1,134 @@
+/* PARTE 1 */
+/* Selector universal */
+* {
+    box-sizing: border-box;
+}
+
+/* Configuracin de la herencia base del documento */
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    color: #1e293b;
+    background-color: #f8fafc;
+}
+/* PARTE 2 */
+/* Comprovació de la cascada CSS */
+.caixa-avis {
+    background-color: #dbeafe;
+    border: 1px solid #eab308;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+/* PREGUNTA DE REFLEXIÓN (Parte 2): 
+1. Quin color de fons mostra el navegador per a .caixa-avis i per què? 
+   El navegador muestra el color rojo claro (#fee2e2). Esto ocurre por la jerarquía de la cascada y la especificidad CSS: los estilos en línea (inline) tienen mayor prioridad que los estilos internos (<style>) y los externos (estils.css).
+
+2. Què passaria si afegissis !important al fitxer extern? 
+   Si se añade !important a la regla externa, esta rompería el orden normal de la cascada y sobrescribiría el estilo en línea, haciendo que la caja se mostrara de color azul claro (#dbeafe). 
+*/
+    /* PARTE 3 */
+
+   /* Capçalera principal */
+#capcalera {
+    text-align: center;
+    color: #ffffff;
+    background-color: #0f172a;
+    padding: 20px;
+}
+
+/* Elementos del menú en horitzontal sin Flexbox */
+.menu li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+/* Contenido principal centrado */
+#contingut {
+    width: 85%;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+/* Targetas de contenido */
+.fitxa {
+    background-color: #ffffff;
+    border: 2px solid #cbd5e1;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+/* Propiedades de las etiquetas en linea */
+.etiqueta-inline {
+    display: inline-block;
+    background-color: #e2e8f0;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+  /* PARTE 4 */
+
+  /*  Enlaces en la navegacion */
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 8px 12px;
+}
+
+/* Hijo directo de contenido */
+#contingut > section {
+    background-color: #ffffff;
+    padding: 25px;
+}
+
+/* Paragrafo seguido de un h2 */
+h2 + p {
+    font-weight: bold;
+    color: #0284c7;
+}
+
+/* Posterior a un h2 */
+h2 ~ p {
+    font-size: 1.05rem;
+}
+
+    /* PARTE 5 */
+
+/* Enlaces que se abren en una pestaña nueva */
+a[target="_blank"] {
+    color: #15803d;
+    font-weight: bold;
+}
+
+/* Enlaces que apuntan a un fichero PDF */
+a[href$=".pdf"] {
+    color: #b91c1c;
+}
+
+    /* PARTE 6 */
+
+/* Pseudo-classe d'interacció: hover en los enlaçes */
+nav a:hover {
+    background-color: #334155;
+    border-radius: 5px;
+}
+
+/* Pseudo-classe estructural: estilo de la ultima etiqueta */
+.fitxa:last-child {
+    margin-bottom: 0;
+    border-left: 6px solid #0284c7;
+}
+
+/* Pseudo-element: icono antes de los titulos del fitxero */
+.fitxa h3::before {
+    content: "▸ ";
+    color: #0284c7;
+}
+
+/* Pseudo-element: Etiqueta despues del pdf */
+a[href$=".pdf"]::after {
+    content: " [PDF]";
+}
+
+/* Pseudo-element: primera letra destacada en el paragrafo */
+.intro::first-letter {
+    font-size: 1.5rem;
+    color: #0284c7;
+}
